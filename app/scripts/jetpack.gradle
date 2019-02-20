@@ -5,4 +5,15 @@ dependencies {
      * */
     implementation Dependencies.appCompat
 
+    /**
+     * Constraint layout
+     * */
+    implementation Dependencies.constraintLayout
+
+    /**
+     * Lifecycle
+     * */
+    implementation Dependencies.archLibs
+    kapt Dependencies.archCompilers
+
 }

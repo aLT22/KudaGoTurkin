@@ -20,11 +20,17 @@ object Versions {
         const val coroutines = "1.1.1"
     }
 
+    object DI {
+        const val koin = "1.0.2"
+    }
+
     /**
      * JetPack
      * */
     object JetPack {
         const val appCompat = "1.1.0-alpha02"
+        const val constraintLayout = "1.1.3"
+        const val lifecycle = "2.0.0"
     }
 
     /**
