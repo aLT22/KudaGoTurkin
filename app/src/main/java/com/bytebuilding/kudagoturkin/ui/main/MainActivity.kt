@@ -1,16 +1,20 @@
 package com.bytebuilding.kudagoturkin.ui.main
 
-import android.os.Bundle
-import androidx.databinding.ViewDataBinding
 import com.bytebuilding.kudagoturkin.R
+import com.bytebuilding.kudagoturkin.databinding.ActivityMainBinding
 import com.bytebuilding.kudagoturkin.ui.base.BaseActivity
 
-class MainActivity : BaseActivity<ViewDataBinding, MainActivityVM>(MainActivityVM::class) {
+class MainActivity : BaseActivity<ActivityMainBinding, MainActivityVM>(MainActivityVM::class) {
 
     override fun layoutId(): Int = R.layout.activity_main
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initViews() {
+    }
+
+    override fun initListeners() {
+    }
+
+    override fun removeListeners() {
     }
 
     companion object {

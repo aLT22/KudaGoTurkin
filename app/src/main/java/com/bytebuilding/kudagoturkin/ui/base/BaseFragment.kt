@@ -34,6 +34,10 @@ abstract class BaseFragment<V : ViewDataBinding, VM : BaseViewModel>(
     @LayoutRes
     abstract fun layoutId(): Int
 
+    abstract fun initViews()
+    abstract fun initListeners()
+    abstract fun removeListeners()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -48,8 +52,21 @@ abstract class BaseFragment<V : ViewDataBinding, VM : BaseViewModel>(
         return mBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initViews()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        initListeners()
+    }
+
     override fun onStop() {
         mJob.cancelChildren()
+        removeListeners()
 
         super.onStop()
     }
