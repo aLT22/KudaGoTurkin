@@ -1,14 +1,9 @@
 dependencies {
 
     /**
-     * AppCompat
+     * UI libs from JetPack
      * */
-    implementation Dependencies.appCompat
-
-    /**
-     * Constraint layout
-     * */
-    implementation Dependencies.constraintLayout
+    implementation Dependencies.jetPackUi
 
     /**
      * Lifecycle

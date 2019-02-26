@@ -31,6 +31,9 @@ object Versions {
         const val appCompat = "1.1.0-alpha02"
         const val constraintLayout = "1.1.3"
         const val lifecycle = "2.0.0"
+        const val recyclerView = "1.0.0"
+        const val material = "1.1.0-alpha03"
+        const val cardView = "1.0.0"
     }
 
     /**

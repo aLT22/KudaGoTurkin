@@ -28,6 +28,16 @@ object Dependencies {
      * */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.JetPack.appCompat}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.JetPack.constraintLayout}"
+    const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.JetPack.recyclerView}"
+    const val material = "com.google.android.material:material:${Versions.JetPack.material}"
+    const val cardView = "androidx.cardview:cardview:${Versions.JetPack.cardView}"
+    val jetPackUi = arrayOf(
+        appCompat,
+        constraintLayout,
+        recyclerView,
+        material,
+        cardView
+    )
     val archLibs = arrayOf(
         "androidx.lifecycle:lifecycle-runtime:${Versions.JetPack.lifecycle}",
         "androidx.lifecycle:lifecycle-extensions:${Versions.JetPack.lifecycle}",
