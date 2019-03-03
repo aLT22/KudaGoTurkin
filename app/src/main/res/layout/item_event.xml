@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/eventCard"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/eventContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/eventMainPhoto"
+                android:background="@color/colorAccent"
+                android:layout_width="0dp"
+                android:layout_height="160dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/eventTitle"
+                android:layout_width="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:maxLines="2"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                tools:text="Музыкальный фестиваль LiveFest Summer"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:fontFamily="@font/roboto_bold"
+                android:textAllCaps="true"
+                android:gravity="start"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventMainPhoto"
+                android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/eventDescription"
+                android:layout_width="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                tools:text="Первый фестиваль LiveFest на курорте «Роза Хутор» собрал перспективные музыкальные..."
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_light"
+                android:gravity="start"
+                android:maxLines="2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventTitle"
+                android:layout_height="wrap_content"/>
+
+        <com.bytebuilding.kudagoturkin.ui.custom.EventInfoView
+                android:id="@+id/eventLocation"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventDescription"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                app:eiv_icon="@drawable/ic_location"
+                app:eiv_description="Lol kek cheburek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        <com.bytebuilding.kudagoturkin.ui.custom.EventInfoView
+                android:id="@+id/eventDate"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventLocation"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                app:eiv_icon="@drawable/ic_calendar"
+                app:eiv_description="Lol kek cheburek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        <com.bytebuilding.kudagoturkin.ui.custom.EventInfoView
+                android:id="@+id/eventPrice"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventDate"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                app:eiv_icon="@drawable/ic_rubble"
+                app:eiv_description="Lol kek cheburek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
