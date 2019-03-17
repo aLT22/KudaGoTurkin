@@ -24,6 +24,12 @@ object Dependencies {
     )
 
     /**
+     * Network
+     * */
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Network.retrofit}"
+    const val gsonConverter = "com.google.code.gson:gson:$"
+
+    /**
      * JetPack
      * */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.JetPack.appCompat}"

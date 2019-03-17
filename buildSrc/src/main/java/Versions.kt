@@ -24,6 +24,11 @@ object Versions {
         const val koin = "1.0.2"
     }
 
+    object Network {
+        const val retrofit = "2.5.0"
+        const val gson = "2.8.5"
+    }
+
     /**
      * JetPack
      * */
