@@ -2,17 +2,16 @@ package com.bytebuilding.kudagoturkin.ui.custom
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.bytebuilding.kudagoturkin.R
 import com.bytebuilding.kudagoturkin.utils.getString
 
-
+//TODO: rewrite this view like a view with collection of elements and dynamic adding views
 class EventInfoView(
-    context: Context,
-    attrs: AttributeSet? = null
+        context: Context,
+        attrs: AttributeSet? = null
 ) : LinearLayoutCompat(context, attrs) {
 
     /**
@@ -28,7 +27,7 @@ class EventInfoView(
     private var mDescriptionText: String
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.view_custom_event_info, this, true)
+        inflate(context, R.layout.view_custom_event_info, this)
 
         orientation = HORIZONTAL
 
