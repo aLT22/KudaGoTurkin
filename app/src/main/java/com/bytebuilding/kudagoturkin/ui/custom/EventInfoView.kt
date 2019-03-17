@@ -8,7 +8,7 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import com.bytebuilding.kudagoturkin.R
 import com.bytebuilding.kudagoturkin.utils.getString
 
-
+//TODO: rewrite this view like a view with collection of elements and dynamic adding views
 class EventInfoView(
         context: Context,
         attrs: AttributeSet? = null
