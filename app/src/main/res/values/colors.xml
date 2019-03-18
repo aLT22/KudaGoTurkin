@@ -15,4 +15,7 @@
     <!-- View stub error internet connection -->
     <color name="view_red_alert_background">#E53E39</color>
     <color name="view_red_alert_text_color">@color/colorWhite</color>
+
+    <!-- Choose city screen colors -->
+    <color name="choose_city_toolbar_background">@color/colorWhite</color>
 </resources>
