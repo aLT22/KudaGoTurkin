@@ -1,6 +1,12 @@
 package com.bytebuilding.kudagoturkin.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.os.Build
+import android.os.Bundle
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import com.bytebuilding.kudagoturkin.data.model.City
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -100,7 +106,51 @@ fun Context.getDefaultCity() =
             getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE).getString(KEY_DEFAULT_CITY, DEFAULT_CITY_JSON),
             City::class.java
         )
+
+fun Context.getDefaultCityName() =
+    Gson()
+        .fromJson<City>(
+            getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE).getString(KEY_DEFAULT_CITY, DEFAULT_CITY_JSON),
+            City::class.java
+        )
         .name
 /**
  * SharedPreferences
+ * */
+/**
+ * Toasts
+ * */
+fun Context.longToast(msg: CharSequence) = Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+
+fun Context.shortToast(msg: CharSequence) = Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+/**
+ * Toasts
+ * */
+/**
+ * Launch another activity
+ * */
+@SuppressLint("ObsoleteSdkInt")
+inline fun <reified T : Any> Context.launchActivity(
+    requestCode: Int = -1,
+    options: Bundle? = null,
+    noinline init: Intent.() -> Unit = {}
+) {
+
+    val intent = newIntent<T>()
+    intent.init()
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+        startActivity(intent, options)
+    } else {
+        ActivityCompat.startActivity(this, intent, options)
+    }
+}
+/**
+ * Launch another activity
+ * */
+/**
+ * Intent
+ * */
+inline fun <reified T : Any> Context.newIntent() = Intent(this, T::class.java)
+/**
+ * Intent
  * */
