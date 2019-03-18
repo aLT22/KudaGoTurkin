@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/toolbarChooseCityContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="37dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginBottom="21dp"
+            app:srcCompat="@drawable/ic_close_24dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            app:fontFamily="@font/roboto_medium"
+            tools:text="Выберите город"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</com.google.android.material.appbar.AppBarLayout>
