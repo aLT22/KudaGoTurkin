@@ -18,4 +18,8 @@ class KudaGoTurkinApp : Application() {
         )
     }
 
+    companion object {
+        const val TAG = "KudaGoTurkin"
+    }
+
 }
