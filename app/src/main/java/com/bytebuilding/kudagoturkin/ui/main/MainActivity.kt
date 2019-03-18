@@ -28,6 +28,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityVM>(MainActiv
         }
     }
 
+    override fun observeChanges() {
+    }
+
     override fun removeListeners() {
         mCityPickerContainer?.setOnClickListener(null)
     }
