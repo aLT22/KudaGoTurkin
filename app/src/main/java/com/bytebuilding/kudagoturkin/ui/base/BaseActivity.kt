@@ -32,6 +32,7 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel>(
 
     abstract fun initViews()
     abstract fun initListeners()
+    abstract fun observeChanges()
     abstract fun removeListeners()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +49,7 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel>(
         super.onStart()
 
         initListeners()
+        observeChanges()
     }
 
     override fun onStop() {

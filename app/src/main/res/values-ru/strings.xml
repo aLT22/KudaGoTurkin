@@ -1,0 +1,6 @@
+<resources>
+    <!-- Main Activity strings -->
+
+    <!-- Choose City Activity strings -->
+    <string name="choose_city_activity_toolbar_title">Выберите город</string>
+</resources>

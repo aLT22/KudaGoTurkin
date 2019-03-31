@@ -20,4 +20,9 @@ dependencies {
      * */
     implementation Dependencies.koinLibs
 
+    /**
+     * Network
+     * */
+    implementation Dependencies.networkLibs
+
 }

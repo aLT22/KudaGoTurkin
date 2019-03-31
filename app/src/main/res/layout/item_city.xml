@@ -3,41 +3,33 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="vm"
-            type="com.bytebuilding.kudagoturkin.ui.main.MainActivityVM"/>
-    </data>
-
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/cityPickerContainer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:focusable="true"
+        android:layout_margin="4dp"
+        android:background="?attr/selectableItemBackground"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:weightSum="1">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/cityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@{vm.MDefaultCityName}"
-            android:textColor="@color/events_list_city_picker_text_color"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorBlack"
             android:textSize="16sp"
-            app:fontFamily="@font/roboto_medium"
+            app:fontFamily="@font/roboto_regular"
             tools:text="Moscow"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/cityArrow"
+            android:id="@+id/isCityChosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            app:srcCompat="@drawable/ic_red_arrow_down"/>
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_ok_24dp"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

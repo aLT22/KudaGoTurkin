@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "name": "Moscow"
+  },
+  {
+    "id": 1,
+    "name": "Saint-Petersburg"
+  },
+  {
+    "id": 2,
+    "name": "Kazan"
+  },
+  {
+    "id": 3,
+    "name": "Novosibirsk"
+  },
+  {
+    "id": 4,
+    "name": "Ekaterinburg"
+  },
+  {
+    "id": 5,
+    "name": "Nizhnii Novgorod"
+  },
+  {
+    "id": 6,
+    "name": "Samara"
+  },
+  {
+    "id": 7,
+    "name": "Ufa"
+  },
+  {
+    "id": 8,
+    "name": "Krasnoyarsk"
+  }
+]
