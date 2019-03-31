@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">KudaGoTurkin</string>
+    <string name="app_name" translatable="false">KudaGoTurkin</string>
 
     <string name="stub" translatable="false"/>
+    
+    <!-- Main Activity strings -->
+    
+    <!-- Choose City Activity strings -->
+    <string name="choose_city_activity_toolbar_title">Choose city</string>
 </resources>
