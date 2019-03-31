@@ -32,9 +32,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:text="@string/choose_city_activity_toolbar_title"
             android:textColor="@color/colorBlack"
             android:textSize="24sp"
-            app:fontFamily="@font/roboto_medium"
+            app:fontFamily="@font/roboto_bold"
             tools:text="Выберите город"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </com.google.android.material.appbar.AppBarLayout>

@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.appbar.AppBarLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="?actionBarSize"
-    android:background="@color/events_list_toolbar_background">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <data>
+
+        <variable
+            name="vm"
+            type="com.bytebuilding.kudagoturkin.ui.main.MainActivityVM"/>
+    </data>
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?actionBarSize"
+        android:background="@color/events_list_toolbar_background">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_margin="8dp"
-            app:srcCompat="@drawable/logo_kudago"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <include
-            layout="@layout/view_city_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="8dp"/>
-    </RelativeLayout>
-</com.google.android.material.appbar.AppBarLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/logo_kudago"/>
+
+            <include
+                layout="@layout/view_city_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+                bind:vm="@{vm}"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+</layout>

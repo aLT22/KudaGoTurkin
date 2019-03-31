@@ -6,6 +6,8 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="?attr/selectableItemBackground"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -16,7 +18,7 @@
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:textColor="@color/colorBlack"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:fontFamily="@font/roboto_regular"
             tools:text="Moscow"/>
 
