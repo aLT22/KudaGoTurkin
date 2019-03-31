@@ -39,7 +39,6 @@ class ChooseCityListAdapter(
         override fun bind(model: City, listener: (City) -> Unit) {
             mBinding.root.setOnClickListener {
                 listener.invoke(model)
-                mBinding.executePendingBindings()
             }
 
             mBinding.cityName.text = model.name

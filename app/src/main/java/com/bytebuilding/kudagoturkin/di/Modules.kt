@@ -13,7 +13,7 @@ val viewModelModule = module {
     /**
      * Activity VMs
      * */
-    viewModel { MainActivityVM() }
+    viewModel { MainActivityVM(androidApplication()) }
     viewModel { ChooseCityActivityVM(androidApplication()) }
 
 }

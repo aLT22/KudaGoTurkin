@@ -13,7 +13,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
 import java.nio.charset.Charset
-import java.util.*
 
 
 class ChooseCityActivityVM(private val context: Application) : BaseViewModel() {
@@ -37,9 +36,9 @@ class ChooseCityActivityVM(private val context: Application) : BaseViewModel() {
 
                 val cities = String(buffer, Charset.forName(DEFAULT_CHARSET))
 
-                val listType = object : TypeToken<LinkedList<City>>() {}.type
+                val listType = object : TypeToken<List<City>>() {}.type
 
-                mCitiesLiveData.postValue(Gson().fromJson<LinkedList<City>>(cities, listType))
+                mCitiesLiveData.postValue(Gson().fromJson<List<City>>(cities, listType))
             } catch (th: Throwable) {
                 loge(SET_CITY_TAG, "Something went wrong while fetching cities from assets", th)
             }

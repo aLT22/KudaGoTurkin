@@ -1,13 +1,11 @@
 package com.bytebuilding.kudagoturkin.ui.main
 
-import android.os.Bundle
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.bytebuilding.kudagoturkin.R
 import com.bytebuilding.kudagoturkin.databinding.ActivityMainBinding
 import com.bytebuilding.kudagoturkin.ui.base.BaseActivity
 import com.bytebuilding.kudagoturkin.ui.cities.ChooseCityActivity
-import com.bytebuilding.kudagoturkin.utils.getDefaultCityName
 import com.bytebuilding.kudagoturkin.utils.launchActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainActivityVM>(MainActivityVM::class) {
@@ -29,18 +27,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityVM>(MainActiv
     }
 
     override fun observeChanges() {
+        mViewModel.getDefaultCityName()
     }
 
     override fun removeListeners() {
         mCityPickerContainer?.setOnClickListener(null)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        mCityName?.let { view ->
-            view.text = getDefaultCityName()
-        }
     }
 
     companion object {

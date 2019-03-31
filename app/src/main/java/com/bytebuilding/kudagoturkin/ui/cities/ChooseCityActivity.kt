@@ -3,6 +3,8 @@ package com.bytebuilding.kudagoturkin.ui.cities
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bytebuilding.kudagoturkin.R
 import com.bytebuilding.kudagoturkin.databinding.ActivityChooseCityBinding
 import com.bytebuilding.kudagoturkin.ui.adapters.rv.ChooseCityListAdapter
@@ -41,10 +43,17 @@ class ChooseCityActivity : BaseActivity<ActivityChooseCityBinding, ChooseCityAct
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
         mChooseCityAdapter = ChooseCityListAdapter { chosenCity ->
             setDefaultCity(chosenCity)
+            mChooseCityAdapter.notifyDataSetChanged()
         }
-        mBinding.cities.adapter = mChooseCityAdapter
+        mBinding.cities.apply {
+            layoutManager = LinearLayoutManager(this@ChooseCityActivity, RecyclerView.VERTICAL, false)
+            setHasFixedSize(true)
+            adapter = mChooseCityAdapter
+        }
     }
 
     companion object {
