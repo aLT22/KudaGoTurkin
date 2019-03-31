@@ -19,13 +19,21 @@ class ChooseCityActivityVM(private val context: Application) : BaseViewModel() {
 
     private val mCitiesLiveData = MutableLiveData<List<City>>()
 
+    /**
+     * Databinding properties
+     * */
+    val mIsLoading = MutableLiveData<Boolean>()
+
     init {
+        mIsLoading.value = false
         getCities()
     }
 
     fun getCities(): LiveData<List<City>> {
         launch {
             try {
+                mIsLoading.postValue(true)
+
                 val inputStream = context.assets.open(ASSET_CITIES)
                 val inputStreamSize = inputStream.available()
                 val buffer = ByteArray(inputStreamSize)
@@ -39,7 +47,10 @@ class ChooseCityActivityVM(private val context: Application) : BaseViewModel() {
                 val listType = object : TypeToken<List<City>>() {}.type
 
                 mCitiesLiveData.postValue(Gson().fromJson<List<City>>(cities, listType))
+
+                mIsLoading.postValue(false)
             } catch (th: Throwable) {
+                mIsLoading.postValue(false)
                 loge(SET_CITY_TAG, "Something went wrong while fetching cities from assets", th)
             }
         }

@@ -28,6 +28,10 @@ class ChooseCityActivity : BaseActivity<ActivityChooseCityBinding, ChooseCityAct
         mClose?.setOnClickListener {
             finish()
         }
+
+        mBinding.srlContainer.setOnRefreshListener {
+            mViewModel.getCities()
+        }
     }
 
     override fun observeChanges() {
@@ -42,8 +46,6 @@ class ChooseCityActivity : BaseActivity<ActivityChooseCityBinding, ChooseCityAct
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
 
         mChooseCityAdapter = ChooseCityListAdapter { chosenCity ->
             setDefaultCity(chosenCity)
