@@ -1,5 +1,12 @@
 <resources>
-    <!-- Main Activity strings -->
+    <!--
+        Main Activity strings
+    -->
+    <!-- Where-To-Go viewholder -->
+    <string name="main_activity_where_to_go">Where to go</string>
+    <!--
+        Main Activity strings
+    -->
 
     <!-- Choose City Activity strings -->
     <string name="choose_city_activity_toolbar_title">Выберите город</string>

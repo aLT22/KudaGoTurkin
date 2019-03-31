@@ -29,20 +29,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 bind:vm="@{vm}"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="30sp"
-                app:fontFamily="@font/roboto_bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/includedToolbar"
-                tools:text="Куда сходить"/>
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventsRecyclerView"
                 android:layout_width="0dp"
@@ -51,7 +37,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/includedToolbar"
                 tools:listitem="@layout/item_event"/>
 
             <ViewStub
