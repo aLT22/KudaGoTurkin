@@ -1,7 +1,6 @@
 package com.bytebuilding.kudagoturkin.ui.adapters.rv
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
@@ -10,12 +9,14 @@ import com.bytebuilding.kudagoturkin.R
 import com.bytebuilding.kudagoturkin.data.model.City
 import com.bytebuilding.kudagoturkin.databinding.ItemCityBinding
 import com.bytebuilding.kudagoturkin.ui.base.BaseViewHolder
-import com.bytebuilding.kudagoturkin.utils.getDefaultCity
+import com.bytebuilding.kudagoturkin.utils.getDefaultCityName
 
 
 class ChooseCityListAdapter(
-    private val mOnCityClickListener: (City) -> Unit
+    private val mOnCityClickListener: (city: City, previousCityIndex: Int, newCityIndex: Int) -> Unit
 ) : ListAdapter<City, ChooseCityListAdapter.CityViewHolder>(CityItemDiffCallback()) {
+
+    var previousCityIndex: Int = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder =
         CityViewHolder(
@@ -29,22 +30,22 @@ class ChooseCityListAdapter(
         )
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
-        holder.bind(getItem(position), mOnCityClickListener)
+        if (getItem(position).name == holder.itemView.context.getDefaultCityName()) {
+            previousCityIndex = position
+        }
+        holder.bind(position, getItem(position), null)
     }
 
-    class CityViewHolder(
+    inner class CityViewHolder(
         private val mBinding: ItemCityBinding
     ) : BaseViewHolder<ItemCityBinding, City>(mBinding) {
+        override fun bind(position: Int, model: City, listener: ((City) -> Unit)?) {
+            super.bind(position, model, listener)
 
-        override fun bind(model: City, listener: (City) -> Unit) {
             mBinding.root.setOnClickListener {
-                listener.invoke(model)
+                mOnCityClickListener.invoke(model, previousCityIndex, position)
+                previousCityIndex = position
             }
-
-            mBinding.cityName.text = model.name
-            mBinding.isCityChosen.visibility =
-                if (mBinding.root.context.getDefaultCity() == model) View.VISIBLE
-                else View.GONE
         }
     }
 }
