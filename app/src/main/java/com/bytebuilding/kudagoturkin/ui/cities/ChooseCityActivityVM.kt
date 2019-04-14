@@ -17,7 +17,7 @@ import java.nio.charset.Charset
 
 class ChooseCityActivityVM(private val context: Application) : BaseViewModel() {
 
-    private val mCitiesLiveData = MutableLiveData<List<City>>()
+    val mCitiesLiveData = MutableLiveData<List<City>>()
 
     /**
      * Databinding properties

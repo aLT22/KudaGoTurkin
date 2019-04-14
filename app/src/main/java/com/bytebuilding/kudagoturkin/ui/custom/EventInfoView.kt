@@ -10,8 +10,8 @@ import com.bytebuilding.kudagoturkin.utils.getString
 
 //TODO: rewrite this view like a view with collection of elements and dynamic adding views
 class EventInfoView(
-        context: Context,
-        attrs: AttributeSet? = null
+    context: Context,
+    attrs: AttributeSet? = null
 ) : LinearLayoutCompat(context, attrs) {
 
     /**
@@ -43,15 +43,16 @@ class EventInfoView(
 
             typedArray.recycle()
         }
-    }
-
-    override fun onFinishInflate() {
-        super.onFinishInflate()
 
         mIcon = findViewById(R.id.icon)
         if (mIconRes != DEFAULT_ICON_RES) mIcon.setImageResource(mIconRes)
 
         mDescription = findViewById(R.id.description)
+        mDescription.text = mDescriptionText
+    }
+
+    fun setDescription(description: CharSequence) {
+        mDescriptionText = description.toString()
         mDescription.text = mDescriptionText
     }
 

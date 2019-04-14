@@ -22,6 +22,8 @@ class ChooseCityActivity : BaseActivity<ActivityChooseCityBinding, ChooseCityAct
 
     override fun initViews() {
         mClose = findViewById(R.id.close)
+
+        mBinding.srlContainer.setColorSchemeResources(R.color.choose_city_loading_indicator_color)
     }
 
     override fun initListeners() {
@@ -40,16 +42,24 @@ class ChooseCityActivity : BaseActivity<ActivityChooseCityBinding, ChooseCityAct
         })
     }
 
+    override fun removeObservers() {
+        mViewModel.mIsLoading.removeObservers(this)
+        mViewModel.mCitiesLiveData.removeObservers(this)
+    }
+
     override fun removeListeners() {
         mClose?.setOnClickListener(null)
+
+        mBinding.srlContainer.setOnRefreshListener(null)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mChooseCityAdapter = ChooseCityListAdapter { chosenCity ->
+        mChooseCityAdapter = ChooseCityListAdapter { chosenCity, previousIndex, currentIndex ->
             setDefaultCity(chosenCity)
-            mChooseCityAdapter.notifyDataSetChanged()
+            mChooseCityAdapter.notifyItemChanged(previousIndex)
+            mChooseCityAdapter.notifyItemChanged(currentIndex)
         }
         mBinding.cities.apply {
             layoutManager = LinearLayoutManager(this@ChooseCityActivity, RecyclerView.VERTICAL, false)
