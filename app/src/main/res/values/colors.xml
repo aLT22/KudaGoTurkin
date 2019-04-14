@@ -11,6 +11,7 @@
     <!-- Events list colors -->
     <color name="events_list_city_picker_text_color">#E53E39</color>
     <color name="events_list_toolbar_background">@color/colorWhite</color>
+    <color name="events_list_loading_indicator_color">#D64848</color>
 
     <!-- View stub error internet connection -->
     <color name="view_red_alert_background">#E53E39</color>
@@ -18,4 +19,5 @@
 
     <!-- Choose city screen colors -->
     <color name="choose_city_toolbar_background">@color/colorWhite</color>
+    <color name="choose_city_loading_indicator_color">#D64848</color>
 </resources>
