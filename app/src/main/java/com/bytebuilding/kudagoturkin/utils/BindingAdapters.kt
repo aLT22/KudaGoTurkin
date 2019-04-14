@@ -10,7 +10,7 @@ import com.bytebuilding.kudagoturkin.ui.custom.EventInfoView
 /**
  * AppCompatImageView
  * */
-@BindingAdapter("isCityChosen")
+@BindingAdapter("bind:isCityChosen")
 fun AppCompatImageView.isCityChosen(city: City) {
     this.visibility =
         if (context.getDefaultCity() == city) View.VISIBLE
@@ -23,7 +23,7 @@ fun AppCompatImageView.isCityChosen(city: City) {
 /**
  * EventInfoView
  * */
-@BindingAdapter("eiv_description")
+@BindingAdapter("bind:eiv_description")
 fun EventInfoView.setDescription(description: CharSequence) {
     setDescription(description)
 }
