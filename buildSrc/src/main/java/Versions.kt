@@ -42,6 +42,13 @@ object Versions {
     }
 
     /**
+     * Miscellaneous
+     * */
+    object Misc {
+        const val glide = "4.9.0"
+    }
+
+    /**
      * Test
      * */
     object Test {

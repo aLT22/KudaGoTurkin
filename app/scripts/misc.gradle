@@ -1,0 +1,9 @@
+dependencies {
+
+    /**
+     * Glide
+     * */
+    implementation Dependencies.glideLibrary
+    kapt Dependencies.glideCompiler
+
+}
