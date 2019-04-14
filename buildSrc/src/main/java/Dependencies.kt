@@ -7,8 +7,8 @@ object Dependencies {
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Core.coroutines}"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Core.coroutines}"
     val coroutines = arrayOf(
-            coroutinesCore,
-            coroutinesAndroid
+        coroutinesCore,
+        coroutinesAndroid
     )
 
     /**
@@ -18,9 +18,9 @@ object Dependencies {
     const val koinScope = "org.koin:koin-androidx-scope:${Versions.DI.koin}"
     const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.DI.koin}"
     val koinLibs = arrayOf(
-            koinAndroid,
-            koinScope,
-            koinViewModel
+        koinAndroid,
+        koinScope,
+        koinViewModel
     )
 
     /**
@@ -29,8 +29,8 @@ object Dependencies {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Network.retrofit}"
     const val gsonConverter = "com.google.code.gson:gson:${Versions.Network.gson}"
     val networkLibs = arrayOf(
-            retrofit,
-            gsonConverter
+        retrofit,
+        gsonConverter
     )
 
     /**
@@ -42,22 +42,29 @@ object Dependencies {
     const val material = "com.google.android.material:material:${Versions.JetPack.material}"
     const val cardView = "androidx.cardview:cardview:${Versions.JetPack.cardView}"
     val jetPackUi = arrayOf(
-            appCompat,
-            constraintLayout,
-            recyclerView,
-            material,
-            cardView
+        appCompat,
+        constraintLayout,
+        recyclerView,
+        material,
+        cardView
     )
     val archLibs = arrayOf(
-            "androidx.lifecycle:lifecycle-runtime:${Versions.JetPack.lifecycle}",
-            "androidx.lifecycle:lifecycle-extensions:${Versions.JetPack.lifecycle}",
-            "androidx.lifecycle:lifecycle-viewmodel:${Versions.JetPack.lifecycle}",
-            "androidx.lifecycle:lifecycle-common:${Versions.JetPack.lifecycle}"
+        "androidx.lifecycle:lifecycle-runtime:${Versions.JetPack.lifecycle}",
+        "androidx.lifecycle:lifecycle-extensions:${Versions.JetPack.lifecycle}",
+        "androidx.lifecycle:lifecycle-viewmodel:${Versions.JetPack.lifecycle}",
+        "androidx.lifecycle:lifecycle-common:${Versions.JetPack.lifecycle}"
     )
     val archCompilers = arrayOf(
-            "androidx.lifecycle:lifecycle-runtime:${Versions.JetPack.lifecycle}",
-            "androidx.lifecycle:lifecycle-compiler:${Versions.JetPack.lifecycle}"
+        "androidx.lifecycle:lifecycle-runtime:${Versions.JetPack.lifecycle}",
+        "androidx.lifecycle:lifecycle-compiler:${Versions.JetPack.lifecycle}"
     )
+
+    /**
+     * Miscellaneous
+     * */
+    //Image processing
+    const val glideLibrary = "com.github.bumptech.glide:glide:${Versions.Misc.glide}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.Misc.glide}"
 
     /**
      * Test
@@ -66,9 +73,9 @@ object Dependencies {
     const val runner = "androidx.test:runner:${Versions.Test.runner}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.Test.espresso}"
     val testDeps = arrayOf(
-            jUnit,
-            runner,
-            espresso
+        jUnit,
+        runner,
+        espresso
     )
 
 }
